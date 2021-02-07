@@ -7,6 +7,7 @@ import store from "./redux/store" //!se pasa el store recien importando como pro
 import CakeContainer from "./components/CakeContainer";
 import HooksCakeContainer from "./components/HooksCakeContainer"
 import HookIceCreamContainer from "./components/HookIceCreamContainer"
+import HookChocolateContainer from "./components/HookChocolateContainer"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <CakeContainer />
         <HooksCakeContainer />
         <HookIceCreamContainer />
+        <HookChocolateContainer/>
       </div>
     </Provider>
   );
