@@ -4,27 +4,27 @@ import { connect } from "react-redux";
 //impor the action
 import { buyCake } from "../redux";
 
- function CakeContainer(props) {
+function CakeContainer(props) {
   return (
     <div>
-      <h2>Number of Cakess - {props.numberOfCakes}</h2>
-      <button onClick={props.buyCake}>Buy Cake</button>
+      <h2>Number of Cakes - {props.numberOfCakes} (with connect())</h2>
+      <button onClick={props.buyCake}>Buy Cake </button>
     </div>
   );
 }
 
-//1 definir una nueva function// This function gets the redux state as parameter and returns an object
+//!1 definir una nueva function//!This function gets the redux state as parameter and returns an object
 const mapStateToProps = (state) => {
   return {
-    numberOfCakes: state.numberOfCakes
+    numberOfCakes: state.numberOfCakes,
   };
 };
 
-//2  mapDispatch This function gets the redux dispach as parameter and returns an object
-const mapDispatchToProps = dispatch => {
+//!2  mapDispatch This function gets the redux dispach as parameter and returns an object
+const mapDispatchToProps = (dispatch) => {
   return {
-    buyCake: () => dispatch(buyCake())
+    buyCake: () => dispatch(buyCake()), //! Cramos una propiadad (buyCake) y su valor es una funcion que dispacht( Aca pasamemos la acction  )
   };
 };
-//3 conectar estas dos funciones
-export default connect(mapStateToProps , mapDispatchToProps) (CakeContainer)
+//!3 conectar estas dos funciones
+export default connect(mapStateToProps, mapDispatchToProps)(CakeContainer);

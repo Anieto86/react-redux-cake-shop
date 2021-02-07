@@ -1,5 +1,7 @@
 //import constants
-import { BUY_CAKE } from "./cakeConstant";
+ import { BUY_CAKE } from "./cakeConstant";
+
+
 
 //intial state
 const initialState = {
@@ -7,16 +9,15 @@ const initialState = {
 };
 
 const cakeReducer = (state = initialState, action) => {
-
   switch (action.type) {
-    case BUY_CAKE:
-      return {
+    case BUY_CAKE: return {
         ...state,
-        numberOfCakes: state.initialState - 1,
-      };
-    default:
-      return state;
+        numberOfCakes: state.numberOfCakes - 1,
+      }
+    default: return state;
   }
 };
 
 export default cakeReducer;
+
+
