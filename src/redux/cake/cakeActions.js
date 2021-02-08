@@ -3,9 +3,10 @@
 
 
 //Actions functions
-export const buyCake = function() {
+export const buyCake = function(number) {
   return {
-    type: BUY_CAKE
+    type: BUY_CAKE,
+    payload: number
   };
 };
 
